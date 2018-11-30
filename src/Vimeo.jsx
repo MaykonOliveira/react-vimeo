@@ -9,6 +9,7 @@ import Spinner from './Spinner';
 
 const debug = debugFactory('vimeo:player');
 const noop = () => {};
+
 const playerEvents = keyMirror({
   cueChange: null,
   ended: null,
@@ -19,7 +20,8 @@ const playerEvents = keyMirror({
   seeked: null,
   textTrackChange: null,
   timeUpdate: null,
-  volumeChange: null
+  volumeChange: null,
+  playbackRateChange: null
 });
 
 function capitalize(str = '') {
@@ -62,7 +64,8 @@ export default class extends React.Component {
     onSeeked: PropTypes.func,
     onTextTrackChanged: PropTypes.func,
     onTimeUpdate: PropTypes.func,
-    onVolumeChange: PropTypes.func
+    onVolumeChange: PropTypes.func,
+    onPlaybackRateChange: PropTypes.func
   };
 
   static defaultProps = (function() {

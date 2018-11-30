@@ -21,6 +21,7 @@ Interface props {
   onTextTrackChanged?(data?: Object) => Void,
   onTimeUpdate?(data?: Object) => Void,
   onVolumeChange?(data?: Object) => Void
+  onPlaybackRateChange?(data?: Object) => Void
 };
 ```
 
@@ -85,5 +86,7 @@ Called as the current time of the video updates. It generally fires every 250ms,
 
 ### onVolumeChange?(data: Object) => Void
 Triggered when the volume in the player changes.
-Some devices do not support setting the volume of the video independently from the system volume,
-so this event will never fire on those devices.
+Some devices do not support setting the volume of the video independently from the system volume, so this event will never fire on those devices.
+
+### onPlaybackRateChange?(data: Object) => Void
+Triggered when playback rate (speed) in the player changes. Values: 0.5, 1, 1.25, 1.5, 2
